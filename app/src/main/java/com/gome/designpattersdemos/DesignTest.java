@@ -8,6 +8,11 @@ import com.gome.designpattersdemos.decorator.Equipment;
 import com.gome.designpattersdemos.decorator.Hero;
 import com.gome.designpattersdemos.decorator.Lion;
 import com.gome.designpattersdemos.decorator.Wand;
+import com.gome.designpattersdemos.dynamicproxy.Operate;
+import com.gome.designpattersdemos.dynamicproxy.OperateImpl;
+import com.gome.designpattersdemos.dynamicproxy.TimingInvocationHandler;
+
+import java.lang.reflect.Proxy;
 
 /**
  * Created by chenhang01 on 2017/3/3.
@@ -42,11 +47,22 @@ public class DesignTest {
 
     }
 
+    /**
+     * 动态代理模式
+     */
+    public void proxy(){
+        TimingInvocationHandler timingInvocationHandler = new TimingInvocationHandler(new OperateImpl());
+        Operate operate = (Operate) Proxy.newProxyInstance(Operate.class.getClassLoader(),new Class[]{Operate.class},timingInvocationHandler);
+        operate.operateMethod1();
+        operate.operateMethod2();
+        operate.operateMethod3();
+    }
+
     public static void main(String[] args){
         DesignTest designTest = new DesignTest();
 
-        designTest.decorator();
-
+//        designTest.decorator();
+        designTest.proxy();
 
 
     }
