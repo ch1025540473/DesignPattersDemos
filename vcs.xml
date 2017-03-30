@@ -46,6 +46,10 @@
           <option name="url" value="https://github.com/ch1025540473/IncrementalUpdateDemo.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/WuXiaolong/AndroidMVPSample.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="F:\testworkspace" />
