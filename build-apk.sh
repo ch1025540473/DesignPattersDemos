@@ -1,0 +1,1 @@
+./gradlew assembleDebug -P OUT_PUT_DIR_PARA=../apk
